@@ -1,0 +1,51 @@
+{
+  "default-configuration": "Release",
+  "configurations": [
+    "Debug",
+    "Release",
+  ],
+  "localizations": {
+    "development": "en",
+  },
+  "files": [
+    {
+      "kind": "folder",
+      "path": "Xenia",
+      "target-membership": [
+        "Xenia",
+      ],
+      "membership-exceptions": [
+        {
+          "target": "Xenia",
+          "exclusions": [
+            "Xenia.xcconfig",
+          ],
+        },
+      ],
+    }, {
+      "kind": "group",
+      "name": "Products",
+      "children": [
+        { "path": "<PRODUCTS>/Xenia.app", "id": "42B72C0030B3CE7F008F2EFD", "type": "wrapper.application" },
+      ],
+    },
+  ],
+  "targets": [
+    {
+      "name": "Xenia",
+      "id": "42B72BFF30B3CE7F008F2EFD",
+      "product": "Products/Xenia.app",
+      "product-type": "application",
+      "specialized-configurations": [
+        { "name": "Debug", "file": { "anchor": "Xenia", "relative-path": "Xenia.xcconfig" } },
+        { "name": "Release", "file": { "anchor": "Xenia", "relative-path": "Xenia.xcconfig" } },
+      ],
+      "build-phases": [
+        "compile-sources",
+        "resources",
+      ],
+    },
+  ],
+  "last-upgrade": "27.2",
+  "last-swift-update": "27.2",
+}
